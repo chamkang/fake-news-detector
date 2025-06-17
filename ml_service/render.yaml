@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: fake-news-detector-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
+    buildCommand: docker build -t fake-news-detector-api .
+    startCommand: docker run -p 8080:8080 fake-news-detector-api

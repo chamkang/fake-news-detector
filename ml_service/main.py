@@ -17,7 +17,7 @@ app = FastAPI(title="Fake Image Detection API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://fake-news-detector-ai.windsurf.build", "http://localhost:5173"],  # Production and development URLs
+    allow_origins=["https://fake-news-detector-ai.windsurf.build", "http://localhost:5173", "https://*.pythonanywhere.com"],  # Production and development URLs
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

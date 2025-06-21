@@ -47,9 +47,12 @@ app.add_middleware(
 model = ImageClassifier()
 
 @app.get("/")
-async def root():
-    """Health check endpoint."""
-    return {"status": "ok", "message": "Fake Image Detection API is running"}
+def root():
+    return {"status": "ok", "message": "VeriFact API is running"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "service": "verifact-api"}
 
 @app.post("/predict")
 async def predict(file: Optional[UploadFile] = File(None), url: Optional[str] = Form(None)):

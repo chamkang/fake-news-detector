@@ -121,7 +121,7 @@ async def predict(file: Optional[UploadFile] = File(None), url: Optional[str] = 
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv('PORT', '5000'))
+    port = int(os.getenv('PORT', '8080'))
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
